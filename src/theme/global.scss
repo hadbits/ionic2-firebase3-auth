@@ -2,7 +2,7 @@
 
 
 // Global CSS
-// -------------------------------------------------- 
+// --------------------------------------------------
 // Put CSS rules here that you want to apply globally.
 //
 // To declare rules for a specific mode, create a child rule
@@ -10,3 +10,54 @@
 // automatically applied to the <body> element in the app.
 //
 // App Shared Sass variables belong in app.variables.scss.
+
+$SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.5);
+
+.profile-image {
+  img {
+    border-radius: 50%;
+    margin: 10px;
+    border: 4px solid $SIDEMENU_TRANSPARENCY;
+    -webkit-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+  }
+}
+
+.error-box {
+  padding: 10px;
+  border: 1px solid darken($text-input-highlight-color-invalid, 10%);
+  background-color: $text-input-highlight-color-invalid;
+  border-radius: 4px;
+  margin-bottom: 10px;
+
+  p {
+    color: white;
+    margin: 0px;
+  }
+}
+
+ion-label[required] {
+  position: relative;
+
+  &:after {
+    content: "*";
+    font-size: 25px;
+    color: $text-input-highlight-color-invalid;
+    position: absolute;
+    margin-left: 5px;
+    top: -5px;
+  }
+}
+
+.error-toast {
+  .toast-wrapper {
+    background-color: $text-input-highlight-color-invalid;
+  }
+}
+
+.item[no-border] {
+  .item-inner {
+    border: none;
+  }
+}
