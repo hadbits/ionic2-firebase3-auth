@@ -48,7 +48,6 @@ export class LoginPage {
       ).then((authData: any) => {
         console.log(authData.uid);
         loadingController.dismiss();
-        // this.nav.push(ClientsPage);
       }).catch((error: any) => {
         if (error) {
           loadingController.dismiss().then(() => {
