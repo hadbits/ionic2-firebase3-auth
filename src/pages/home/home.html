@@ -1,10 +1,14 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="home">
+<ion-content padding>
   <h2>Welcome to Firebase 3 Auth Starter!</h2>
+
   <button ion-button small clear (click)="logOut()">Logout</button>
 </ion-content>

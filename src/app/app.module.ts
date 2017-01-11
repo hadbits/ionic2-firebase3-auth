@@ -1,7 +1,8 @@
 //import { BrowserModule } from '@angular/platform-browser';
 
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
@@ -27,18 +28,18 @@ export const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 @NgModule({
-  imports: [
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig),
-    FormsModule,
-    ReactiveFormsModule
-  ],
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
     ForgotPage,
     RegisterPage
+  ],
+  imports: [
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    FormsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,8 +49,6 @@ firebase.initializeApp(firebaseConfig);
     ForgotPage,
     RegisterPage
   ],
-  providers: [
-    Auth
-  ]
+  providers: [Auth, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule { }
